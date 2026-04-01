@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: "jobportal"
+  datasource:
+    url: ${DB_URL}}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope:
+              - profile
+              - email
+              - openid
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+            user-name-attribute: sub
+logging:
+  level:
+    org.springframework.security: INFO
+app:
+  cors:
+    protocol: ${APP_CORS_PROTOCOL:http}
+    host: ${APP_CORS_HOST:51.20.60.243}
+    frontend:
+      port: ${APP_CORS_FRONTEND_PORT:5173}
+    backend:
+      port: ${APP_CORS_BACKEND_PORT:8080}
