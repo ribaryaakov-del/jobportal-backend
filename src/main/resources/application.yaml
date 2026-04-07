@@ -2,9 +2,9 @@ spring:
   application:
     name: "jobportal"
   datasource:
-    url: ${DB_URL}}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: ${DB_URL:}}
+    username: ${DB_USERNAME:}
+    password: ${DB_PASSWORD:}
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
@@ -15,8 +15,8 @@ spring:
       client:
         registration:
           google:
-            client-id: ${GOOGLE_CLIENT_ID}
-            client-secret: ${GOOGLE_CLIENT_SECRET}
+            client-id: ${GOOGLE_CLIENT_ID:}
+            client-secret: ${GOOGLE_CLIENT_SECRET:}
             scope:
               - profile
               - email
@@ -33,9 +33,9 @@ logging:
     org.springframework.security: INFO
 app:
   cors:
-    protocol: ${APP_CORS_PROTOCOL:http}
-    host: ${APP_CORS_HOST:51.20.60.243}
+    protocol: ${APP_CORS_PROTOCOL:}
+    host: ${APP_CORS_HOST:}
     frontend:
-      port: ${APP_CORS_FRONTEND_PORT:5173}
+      port: ${APP_CORS_FRONTEND_PORT:}
     backend:
-      port: ${APP_CORS_BACKEND_PORT:8080}
+      port: ${APP_CORS_BACKEND_PORT:}
