@@ -35,6 +35,11 @@ jobs:
           username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
+      - name: Check Docker values exist
+        run: |
+          echo "DOCKER_USERNAME set? ${{ vars.DOCKER_USERNAME != '' }}"
+          echo "DOCKER_TOKEN set? ${{ secrets.DOCKER_TOKEN != '' }}"
+
       - name: Build Docker image
         run: |
           IMAGE_NAME=rschoneveld/jobportal-backend
