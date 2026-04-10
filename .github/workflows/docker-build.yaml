@@ -117,7 +117,7 @@ jobs:
         run: |
           IMAGE_NAME=rschoneveld/job-portal-ui
           IMAGE_TAG=${{ github.sha }}
-          docker build -t $IMAGE_NAME:$IMAGE_TAG -t $IMAGE_NAME:latest .
+          docker build -t $IMAGE_NAME:$IMAGE_TAG -t $IMAGE_NAME:latest ./job-portal-ui
 
       - name: Push frontend Docker image
         run: |
