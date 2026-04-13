@@ -5,6 +5,8 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+job-portal-ui/node_modules/
+job-portal-ui/dist/
 
 ### STS ###
 .apt_generated
