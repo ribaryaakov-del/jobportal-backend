@@ -1,1 +1,0 @@
-export const BACKEND_API_URL="http://51.20.60.243:8080";
