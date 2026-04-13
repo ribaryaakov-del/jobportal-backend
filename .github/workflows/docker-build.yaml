@@ -148,11 +148,11 @@ jobs:
             sudo docker login -u "${{ vars.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_TOKEN }}"
             sudo docker pull rschoneveld/job-portal-ui:latest
 
-            sudo docker stop jobportal-frontend || true
-            sudo docker rm jobportal-frontend || true
+            sudo docker stop job-portal-ui || true
+            sudo docker rm job-portal-ui || true
 
             sudo docker run -d \
-              --name jobportal-frontend \
+              --name job-portal-ui \
               --restart unless-stopped \
               -p 5173:5173 \
               rschoneveld/job-portal-ui:latest
